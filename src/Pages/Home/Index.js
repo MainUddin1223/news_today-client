@@ -17,8 +17,9 @@ const Home = () => {
           {/* featured section */}
           <Hero/>
           {/* latest news sectin */}
-          <h1 className="text-2xl p-2 font-semibold bg-red-800 text-red-100 ">Latest News</h1>
+          <div className="my-8">
           <LateatNews/>
+          </div>
         </div>
       </div>
     </div>

@@ -18,8 +18,10 @@ const Header = () => {
           Sports
         </Link>
       </nav>
-      <p className="text-red-100 py-1 text-2xl absolute right-4 top-0 font-semibold cursor-pointer">Login</p>
-    </div>
+      <Link to="/auth?type=login" className="text-red-100 py-1 text-2xl absolute right-4 top-0 font-semibold">
+          Login
+        </Link>
+        </div>
   );
 };
 export default Header;

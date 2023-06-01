@@ -2,15 +2,18 @@ import React from "react";
 import loginImg from "../../assets/login.jpg";
 import Layout from "../Layout/Layout";
 
-const Login = () => {
+
+
+const Login = ({setSearchParams}) => {
+ 
   return (
     <Layout>
-      <div className="grid md:grid-cols-2">
-        <div>
-          <img src={loginImg} alt="" />
+      <div className="flex md:flex-row flex-col items-center justify-center h-screen">
+        <div className="w-1/2">
+          <img src={loginImg} alt="" className="w-3/4 md:block hidden mx-auto" />
         </div>
-        <div className="flex items-center justify-center h-screen">
-          <div className="bg-white rounded-lg shadow-lg p-6">
+        <div className="md:w-1/2 w-3/4 flex justify-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-3/4">
             <h2 className="text-2xl font-semibold mb-4">Login</h2>
             <form>
               <div className="mb-4">
@@ -50,6 +53,9 @@ const Login = () => {
                 </button>
               </div>
             </form>
+            <div className="my-2 text-center font-semibold">
+              <p>New in News Today?<span className="text-blue-500 cursor-pointer" onClick={(e)=>{setSearchParams({ type: 'signup'});}}>Sign up</span></p>
+            </div>
           </div>
         </div>
       </div>
