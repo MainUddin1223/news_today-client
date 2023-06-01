@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import loginImg from "../../assets/login.jpg";
+import { useRequest } from "../../utilis/apiRequest";
 import Layout from "../Layout/Layout";
 
 
 
 const Login = ({setSearchParams}) => {
+const [login]= useRequest()
+const [userInfo,setUserInfo] = useState({})
+
+const handleLogin= async(e)=>{
+  e.preventDefault();
+  const path = 'auth/login';
+  const result = await login({
+    body:userInfo,
+    path,
+    method:'POST'    
+  })
+  if(result.status === 200){
+    localStorage.setItem('token',result.result.token);
+  }
+}
  
   return (
     <Layout>
@@ -15,7 +31,7 @@ const Login = ({setSearchParams}) => {
         <div className="md:w-1/2 w-3/4 flex justify-center">
           <div className="bg-white rounded-lg shadow-lg p-6 w-3/4">
             <h2 className="text-2xl font-semibold mb-4">Login</h2>
-            <form>
+            <form onSubmit={handleLogin}>
               <div className="mb-4">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
@@ -28,6 +44,7 @@ const Login = ({setSearchParams}) => {
                   id="username"
                   type="email"
                   placeholder="Enter your Email"
+                  onChange={(e)=>{setUserInfo((prev)=>({...userInfo,email:e.target.value}))}}
                 />
               </div>
               <div className="mb-6">
@@ -42,6 +59,7 @@ const Login = ({setSearchParams}) => {
                   id="password"
                   type="password"
                   placeholder="Enter your password"
+                  onChange={(e)=>{setUserInfo((prev)=>({...userInfo,password:e.target.value}))}}
                 />
               </div>
               <div className="flex justify-center">
