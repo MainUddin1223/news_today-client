@@ -1,24 +1,22 @@
 import React, { useState } from "react";
+import UploadImg from "../../../utilis/UploadImg";
 import { useRequest } from "../../../utilis/apiRequest";
 
 const CreateReport = () => {
-    const [handleNews,]= useRequest()
+  const [handleNews] = useRequest();
   const [reportForm, setReportForm] = useState({
-    photos: [
-      "https://www.motherjones.com/wp-content/uploads/2023/05/Coronation05062023.jpg",
-    ],
     category: "politics",
   });
 
-  const handleCreateReport = async(e)=>{
+  const handleCreateReport = async (e) => {
     e.preventDefault();
-    const path = 'news/post-news';
+    const path = "news/post-news";
     await handleNews({
-        body:reportForm,
-        path,
-        method:'POST'    
-      })
-  }
+      body: reportForm,
+      path,
+      method: "POST",
+    });
+  };
 
   return (
     <div>
@@ -61,7 +59,7 @@ const CreateReport = () => {
                 onChange={(e) => {
                   setReportForm((prev) => ({
                     ...reportForm,
-                    subtitle: [e.target.value],
+                    subtitle: e.target.value,
                   }));
                 }}
               />
@@ -92,6 +90,7 @@ const CreateReport = () => {
               ></textarea>
             </div>
           </div>
+          <UploadImg setReportForm={setReportForm} reportForm={reportForm} />
           <button
             type="submit"
             className="bg-red-800 text-white w-48 py-2 text-xl font-semibold block mt-4 mx-auto"
