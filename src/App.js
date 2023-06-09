@@ -22,7 +22,7 @@ function App() {
         <Route
           path="/dashboard"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute value="reporter">
               <ReporterDashboard />
             </ProtectedRoute>
           }
@@ -34,7 +34,7 @@ function App() {
         <Route
           path="/admin"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute value="admin">
               <AdminDashboard />
             </ProtectedRoute>
           }
