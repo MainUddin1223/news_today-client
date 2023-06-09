@@ -9,7 +9,7 @@ const LateatNews = () => {
         <hr className="border-1  border-gray-300" />
         <h3 className="font-semibold py-2 text-red-800">MORE TOP STORIES</h3>
         </div>
-        <div class=" bg-white mx-2">
+        <div className=" bg-white mx-2">
             <img src={featureImg2} alt="" className="h-48 mx-auto" />
            <div className="">
            <a href="/">
@@ -32,7 +32,7 @@ const LateatNews = () => {
         <hr className="border-1  border-gray-300" />
         <h3 className="font-semibold py-2 text-red-800">FEATURED</h3>
         </div>
-        <div class=" bg-white mx-2">
+        <div className=" bg-white mx-2">
             <img src={featureImg1} alt="" className=" mx-auto" />
            <div className="">
            <a href="/">
@@ -51,7 +51,7 @@ const LateatNews = () => {
           </div>
         </div>
         <div>
-        <div class=" bg-white mx-2 ">
+        <div className=" bg-white mx-2 ">
           <div className="h-64 bg-blue-100 mt-4 lg:block hidden">
             <h1>Add section</h1>
           </div>

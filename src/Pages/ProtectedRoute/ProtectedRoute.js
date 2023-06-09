@@ -6,7 +6,6 @@ import Loader from "../loader/Loader";
 const ProtectedRoute = ({ children }) => {
   const { appLoading,authData } = useAppContext();
   useEffect(() => {}, [appLoading]);
-  console.log(authData?.userinfo.role,appLoading)
   if (appLoading) {
     return <Loader />;
   }

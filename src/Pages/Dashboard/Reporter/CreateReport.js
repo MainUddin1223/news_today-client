@@ -22,17 +22,17 @@ const CreateReport = () => {
     <div>
       <h1 className="my-4 text-2xl font-bold text-center">Report a News</h1>
       <div className="w-3/4 bg-gray-300 mx-auto mt-4 p-4">
-        <form class="w-full " onSubmit={handleCreateReport}>
-          <div class="">
-            <div class="w-full  px-3 mb-6 md:mb-0">
+        <form className="w-full " onSubmit={handleCreateReport}>
+          <div className="">
+            <div className="w-full  px-3 mb-6 md:mb-0">
               <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 for="grid-first-name"
               >
                 Title *
               </label>
               <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 id="grid-first-name"
                 type="text"
                 placeholder="Jane"
@@ -44,15 +44,15 @@ const CreateReport = () => {
                 }}
               />
             </div>
-            <div class="w-full  px-3 mb-6 md:mb-0">
+            <div className="w-full  px-3 mb-6 md:mb-0">
               <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 for="grid-first-name"
               >
                 Subtitle *
               </label>
               <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 id="grid-first-name"
                 type="text"
                 placeholder="Jane"
@@ -68,9 +68,9 @@ const CreateReport = () => {
               <p>Category :</p>
               <p className="">Politics</p>
             </div>
-            <div class="w-full  px-3 mb-6 md:mb-0">
+            <div className="w-full  px-3 mb-6 md:mb-0">
               <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 for="grid-first-name"
               >
                 Description *
