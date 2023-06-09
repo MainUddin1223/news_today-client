@@ -21,7 +21,7 @@ const SignUp = ({setSearchParams}) => {
     try {
       const response = await axios({
         method: 'post',
-        url:`${baseURL}auth/register`,
+        url:`${baseURL}auth/signup`,
         data:signUpData
       });
       if(response){

@@ -1,30 +1,30 @@
-import React, { createContext, useContext, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useRequest } from '../utilis/apiRequest';
 
 const AppContext = createContext({});
 const AppContextProvider = (props) => {
 
-  const [myInfo] = useRequest();
+  const [appLoading,setAppLoading] = useState(true)
+  const [myInfo,{state:authData}] = useRequest();
 
 const afterLogin = async()=>{
   const path = 'auth/login';
-  const result = await myInfo({
+  await myInfo({
     path,
     method:'GET'    
   })
-  if(result){
-    console.log(result)
-  }
+  setAppLoading(false)
 }
 
 useEffect(()=>{
   afterLogin()
 },[])
-
   const { children, values = {} } = props;
   return (
     <AppContext.Provider
       value={{
+        appLoading,
+        authData,
         ...values,
       }}
     >

@@ -9,6 +9,7 @@ import CreateReport from "./Pages/Dashboard/Reporter/CreateReport";
 import ReporterDashboard from "./Pages/Dashboard/Reporter/Index";
 import MyReportsList from "./Pages/Dashboard/Reporter/Reports";
 import Home from "./Pages/Home/Index";
+import ProtectedRoute from "./Pages/ProtectedRoute/ProtectedRoute";
 import Register from "./Pages/Register/Index";
 
 function App() {
@@ -18,12 +19,27 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/auth" element={<Register />} />
-        <Route path="/dashboard" element={<ReporterDashboard />}>
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <ReporterDashboard />
+            </ProtectedRoute>
+          }
+        >
           <Route path="reports" element={<MyReportsList />} />
           <Route path="create-report" element={<CreateReport />} />
         </Route>
-        <Route path="/admin" element={<AdminDashboard />}>
-          <Route index element={<Reports />}  />
+
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<Reports />} />
           <Route path="reports" element={<Reports />} />
           <Route path="stuff" element={<Stuff />} />
           <Route path="approval" element={<Approval />} />
