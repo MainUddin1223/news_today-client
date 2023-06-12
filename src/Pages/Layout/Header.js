@@ -1,27 +1,51 @@
 import React from "react";
+import { GiHamburgerMenu } from 'react-icons/gi';
 import { Link } from "react-router-dom";
+import logo from '../../assets/logo.png';
 
 const Header = () => {
   return (
-    <div className="bg-red-800 relative">
-      <nav className="flex justify-center space-x-4 font-semibold">
-        <Link to="/home" className="text-red-100 py-1 text-2xl">
+    <div className="bg-gray-700 flex justify-around items-center ">
+      <div className="flex">
+        <GiHamburgerMenu className="text-2xl text-white"/>
+      <img src={logo} alt="" className="w-12 bg-white mx-4 rounded"/>
+      </div>
+      <nav className="flex space-x-4 text-md font-500">
+        <Link to="/home" className="text-red-100 py-1 ">
           Home
         </Link>
-        <Link to="/home" className="text-red-100 py-1 text-2xl">
-          About
+        <Link to="/home" className="text-red-100 py-1 ">
+          Politics
         </Link>
-        <Link to="/home" className="text-red-100 py-1 text-2xl">
-          News
+        <Link to="/home" className="text-red-100 py-1 ">
+          Tech
         </Link>
-        <Link to="/home" className="text-red-100 py-1 text-2xl">
+        <Link to="/home" className="text-red-100 py-1 ">
           Sports
         </Link>
-      </nav>
-      <Link to="/auth?type=login" className="text-red-100 py-1 text-2xl absolute right-4 top-0 font-semibold">
-          Login
+        <Link to="/home" className="text-red-100 py-1 ">
+          Education
         </Link>
-        </div>
+        <Link to="/home" className="text-red-100 py-1 ">
+          Business
+        </Link>
+        <Link to="/home" className="text-red-100 py-1 ">
+          Health
+        </Link>
+        <Link to="/home" className="text-red-100 py-1 ">
+          Low
+        </Link>
+        <Link to="/home" className="text-red-100 py-1 ">
+          Entertainment
+        </Link>
+      </nav>
+      <Link
+        to="/auth?type=login"
+        className="text-red-100 px-2 bg-gray-900 rounded"
+      >
+        Login
+      </Link>
+    </div>
   );
 };
 export default Header;

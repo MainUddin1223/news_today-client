@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import loginImg from "../../assets/login.jpg";
+import { useAppContext } from "../../contextProvider/useAppcontext";
 import { useRequest } from "../../utilis/apiRequest";
 import Layout from "../Layout/Layout";
 
@@ -9,6 +10,7 @@ const Login = ({setSearchParams}) => {
 const [login]= useRequest()
 const [userInfo,setUserInfo] = useState({})
 const navigate = useNavigate();
+const {afterLogin} = useAppContext()
 
 const handleLogin= async(e)=>{
   e.preventDefault();
@@ -20,7 +22,8 @@ const handleLogin= async(e)=>{
   })
   if(result.status === 200){
     localStorage.setItem('token',result.result.token);
-    navigate("/dashboard")
+    afterLogin()
+    navigate("/reporter")
   }
 }
  

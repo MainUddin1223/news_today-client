@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, Routes } from "react-router";
 import "./App.css";
-import AdminDashboard from "./Pages/Admin/AdminDashboard";
-import Approval from "./Pages/Admin/Approval";
-import Reports from "./Pages/Admin/Reports";
-import Stuff from "./Pages/Admin/Stuff";
-import CreateReport from "./Pages/Dashboard/Reporter/CreateReport";
-import ReporterDashboard from "./Pages/Dashboard/Reporter/Index";
-import MyReportsList from "./Pages/Dashboard/Reporter/Reports";
+import AdminDashboard from "./Pages/Administator/Admin/AdminDashboard";
+import Approval from "./Pages/Administator/Admin/Approval";
+import Reports from "./Pages/Administator/Admin/Reports";
+import Stuff from "./Pages/Administator/Admin/Stuff";
+import CreateReport from "./Pages/Administator/Reporter/CreateReport";
+import ReporterDashboard from "./Pages/Administator/Reporter/Index";
+import MyReportsList from "./Pages/Administator/Reporter/Reports";
 import Home from "./Pages/Home/Index";
 import ProtectedRoute from "./Pages/ProtectedRoute/ProtectedRoute";
 import Register from "./Pages/Register/Index";
@@ -20,13 +20,14 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/auth" element={<Register />} />
         <Route
-          path="/dashboard"
+          path="/reporter"
           element={
             <ProtectedRoute value="reporter">
               <ReporterDashboard />
             </ProtectedRoute>
           }
         >
+          <Route index element={<CreateReport />} />
           <Route path="reports" element={<MyReportsList />} />
           <Route path="create-report" element={<CreateReport />} />
         </Route>

@@ -25,6 +25,7 @@ useEffect(()=>{
       value={{
         appLoading,
         authData,
+        afterLogin,
         ...values,
       }}
     >
