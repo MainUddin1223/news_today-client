@@ -7,6 +7,7 @@ import Reports from "./Pages/Administator/Admin/Reports";
 import Stuff from "./Pages/Administator/Admin/Stuff";
 import CreateReport from "./Pages/Administator/Reporter/CreateReport";
 import ReporterDashboard from "./Pages/Administator/Reporter/Index";
+import MyStatics from "./Pages/Administator/Reporter/MyStatics";
 import MyReportsList from "./Pages/Administator/Reporter/Reports";
 import Home from "./Pages/Home/Index";
 import ProtectedRoute from "./Pages/ProtectedRoute/ProtectedRoute";
@@ -27,7 +28,8 @@ function App() {
             </ProtectedRoute>
           }
         >
-          <Route index element={<CreateReport />} />
+          <Route index element={<MyStatics />} />
+          <Route path="statics" element={<MyStatics />} />
           <Route path="reports" element={<MyReportsList />} />
           <Route path="create-report" element={<CreateReport />} />
         </Route>
