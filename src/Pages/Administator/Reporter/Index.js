@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { useAppContext } from "../../../contextProvider/useAppcontext";
+import Logout from "../../Register/Logout";
 
 const ReporterDashboard = () => {
   const { authData } = useAppContext();
   const { email, name, userinfo } = authData;
-  console.log(userinfo)
+  const [geetMessage,setGreetMessage] = useState('')
+  useEffect(()=>{
+    const currentTime = new Date();
+  const currentHour = currentTime.getHours();
+
+  if (currentHour < 12) {
+    setGreetMessage ("Good Morning");
+  } else if (currentHour < 18) {
+    setGreetMessage("Good Afternoon");
+  } else {
+    setGreetMessage ("Good Evening");
+  }
+  },[])
+
+
+
   return (
     <div className="flex">
       <div className="bg-red-800 lg:w-1/6 h-screen shadow-lg shadow-gray-500/40  ">
@@ -21,30 +37,20 @@ const ReporterDashboard = () => {
           <Link to='/reporter/reports' className="bg-gray-300 mx-2 py-1 rounded">Reports</Link>
           <Link to="/reporter/create-report" className="bg-gray-300 mx-2 py-1 rounded">Post a Report</Link>
           <Link to="/reporter/profile" className="bg-gray-300 mx-2 py-1 rounded">Profile</Link>
+          <Logout/>
          </div>
       </div>
       <div className="flex-1 overflow-auto ">
-        {/* <nav className="flex justify-center space-x-4 font-semibold bg-red-800">
-          <Link to="/reporter/reports" className="text-red-100 py-1 text-2xl">
-            Reports
-          </Link>
-          <Link to="/create-report" className="text-red-100 py-1 text-2xl">
-            Create a Report
-          </Link>
-          <Link to="reporter/profile" className="text-red-100 py-1 text-2xl">
-            Profile
-          </Link>
-          <Link to="reporter/sports" className="text-red-100 py-1 text-2xl">
-            Sports
-          </Link>
-        </nav> */}
 
         <div className="h-48 shadow-md shadow-white-500/40 ">
-          <div className="text-center">
+          <div className="p-4">
           <h1 className="text-2xl font-semibold">
-            Welcome {name.firstName} {name.firstName}
+            {geetMessage} {name.firstName} {name.firstName}
           </h1>
           <h2 className="text-xl font-semibold">Designation: <span className="uppercase">{userinfo.role}</span> </h2>
+          <h2 className="text-xl font-semibold">Category: <span className="uppercase">{userinfo.role}</span> </h2>
+          <h2 className="text-xl font-semibold">Sub-Category: <span className="uppercase">{userinfo.role}</span> </h2>
+          <p onClick={async()=>{console.log('fdhgdh')}}>Logout</p>
           </div>
         </div>
         <Outlet />

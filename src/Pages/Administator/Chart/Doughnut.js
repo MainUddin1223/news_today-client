@@ -30,11 +30,9 @@ const DoughnutChart = ({ chartData }) => {
   }
   return (
     <div className=' p-4 bg-gray-200 m-4 rounded shadow-lg shadow-gray-500/40'>
+     <h2 className='text-lg font-semibold text-gray-800 text-center'>Total Statics</h2>
       <Doughnut data={data} options={{
           plugins: {
-            legend: {
-              display: false
-            }
           }
         }} className='mx-auto'/>
     </div>

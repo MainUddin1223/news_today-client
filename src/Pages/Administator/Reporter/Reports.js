@@ -7,17 +7,24 @@ const MyReportsList = () => {
   const [reportsList, setReportsList] = useState([]);
   
   useEffect(() => {
-    getAllNews({
-      path: "news/my-all-reports",
-      method: "GET",
-    }).then((data) => {
-      setReportsList(data?.result);
-    });
+    fatchReports()
+  
   }, []);
-
+  const fatchReports = async()=>{
+    try {
+     const reports = await getAllNews({
+        path: "reporter/reports",
+        method: "GET",
+      })
+      setReportsList(reports?.result
+        )
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div className="lg:w-3/4 text-center mx-auto mt-8">
-      {reportsList.length ? (
+      {reportsList && reportsList.length ? (
         <table className="min-w-full border border-gray-200">
           <thead>
             <tr>

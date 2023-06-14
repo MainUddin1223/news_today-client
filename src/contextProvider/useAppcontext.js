@@ -6,7 +6,7 @@ const AppContextProvider = (props) => {
 
   const [appLoading,setAppLoading] = useState(true)
   const [myInfo,{state:authData}] = useRequest();
-
+console.log(authData)
 const afterLogin = async()=>{
   const path = 'auth/login';
   await myInfo({
@@ -17,7 +17,9 @@ const afterLogin = async()=>{
 }
 
 useEffect(()=>{
-  afterLogin()
+  const token = localStorage.getItem('token')
+
+  token && afterLogin()
 },[])
   const { children, values = {} } = props;
   return (

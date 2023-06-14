@@ -6,7 +6,7 @@ export const useRequest = (path, method = 'get', rowResponse = false) => {
   const [isLoading, setIsLoading] = useState(false);
   const [state, setState] = useState(null);
   const [error, setError] = useState('');
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem('token')|| ''
   const runRequest = async ({
     body,
     path: requestPath,
@@ -33,6 +33,7 @@ export const useRequest = (path, method = 'get', rowResponse = false) => {
         setState(res.data);
         resolve(res.data);
       } catch (error) {
+        console.log('---------------------',error)
         const { response, message } = error;
         let resError;
         if (typeof response?.data === 'object') {
@@ -49,5 +50,5 @@ export const useRequest = (path, method = 'get', rowResponse = false) => {
       }
     });
   };
-  return [runRequest, { state, isLoading, setState, error, setError }];
+  return [runRequest, { state, isLoading, error, setError }];
 };
