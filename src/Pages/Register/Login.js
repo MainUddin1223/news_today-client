@@ -21,9 +21,15 @@ const handleLogin= async(e)=>{
     method:'POST'    
   })
   if(result.status === 200){
+    const userData = result.result
    await localStorage.setItem('token',result.result.token);
+   console.log('userData',userData)
     await afterLogin()
-    navigate("/reporter")
+    if(userData.role == 'reporter'){
+      navigate("/reporter")
+    }else{
+      navigate("/")
+    }
   }
 }
  

@@ -31,8 +31,9 @@ const UploadImg = ({ setReportForm, reportForm }) => {
           e.preventDefault();
           widgetRef.current.open();
         }}
+        className="block uppercase tracking-widetext-xs font-bold  m-3 my-4 bg-red-800 rounded text-white p-2 "
       >
-        Upload img
+        Choose a Photo
       </button>
     </div>
   );

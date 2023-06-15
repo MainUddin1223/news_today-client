@@ -44,13 +44,12 @@ const ReporterDashboard = () => {
 
         <div className="h-48 shadow-md shadow-white-500/40 ">
           <div className="p-4">
-          <h1 className="text-2xl font-semibold">
-            {geetMessage} {name.firstName} {name.firstName}
+          <h1 className="text-2xl font-semibold ">
+            {geetMessage} <span className="uppercase"> {name.firstName} {name?.lastName}</span>
           </h1>
           <h2 className="text-xl font-semibold">Designation: <span className="uppercase">{userinfo.role}</span> </h2>
           <h2 className="text-xl font-semibold">Category: <span className="uppercase">{userinfo.role}</span> </h2>
           <h2 className="text-xl font-semibold">Sub-Category: <span className="uppercase">{userinfo.role}</span> </h2>
-          <p onClick={async()=>{console.log('fdhgdh')}}>Logout</p>
           </div>
         </div>
         <Outlet />

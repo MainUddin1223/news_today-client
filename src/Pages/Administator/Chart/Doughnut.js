@@ -10,13 +10,15 @@ ChartJS.register(
   Tooltip,
   Legend
 )
-const DoughnutChart = ({ chartData }) => {
+const DoughnutChart = ({ totalStatics }) => {
+  console.log(totalStatics)
+  const {totalReports=0,approved=0,pending=0,rejected=0}=totalStatics
   const data = {
     labels:['Total','Approved','pending','Rejected'],
     datasets:[
       {
         label:'',
-        data:[3,6,9,48],
+        data:[totalReports,approved,pending,rejected],
         backgroundColor: [
           'blue',
           'green',

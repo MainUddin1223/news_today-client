@@ -9,13 +9,14 @@ ChartJS.register(
   Tooltip,
   Legend
 )
-const ReportsChart = ({ chartData }) => {
+const DailyReportsChart = ({ dailyStatics }) => {
+  const {totalReports=0,approved=0,pending=0,rejected=0}=dailyStatics
   const data = {
     labels:['Total','Approved','pending','Rejected'],
     datasets:[
       {
         label:'',
-        data:[3,6,9,48],
+        data:[totalReports,approved,pending,rejected],
         backgroundColor: [
           'blue',
           'green',
@@ -40,4 +41,4 @@ const ReportsChart = ({ chartData }) => {
     </div>
   );
 };
-export default ReportsChart;
+export default DailyReportsChart;

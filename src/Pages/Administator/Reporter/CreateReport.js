@@ -8,12 +8,11 @@ const CreateReport = () => {
   const { email, name, userinfo } = authData;
   const [handleNews] = useRequest();
   const [reportForm, setReportForm] = useState({
-    category: "politics",
   });
 
   const handleCreateReport = async (e) => {
     e.preventDefault();
-    const path = "news/post-news";
+    const path = "reporter/report";
     await handleNews({
       body: reportForm,
       path,
@@ -77,6 +76,7 @@ const CreateReport = () => {
               />
             </div>
             </div>
+            <UploadImg setReportForm={setReportForm} reportForm={reportForm} />
             <div className="w-full  px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -139,7 +139,6 @@ const CreateReport = () => {
               ></textarea>
             </div>
           </div>
-          <UploadImg setReportForm={setReportForm} reportForm={reportForm} />
           <button
             type="submit"
             className="bg-red-800 text-white w-48 py-2 text-xl font-semibold block mt-4 mx-auto"
