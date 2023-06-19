@@ -6,7 +6,7 @@ const UploadImg = ({ setReportForm, reportForm }) => {
   const widgetRef = useRef();
   useEffect(() => {
     cloudinaryRef.current = window.cloudinary;
-    widgetRef.current = cloudinaryRef.current.createUploadWidget(
+    widgetRef.current = cloudinaryRef?.current?.createUploadWidget(
       {
         cloudName: "dld6ete1x",
         uploadPreset: "orz0h6jl",

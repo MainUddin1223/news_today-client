@@ -31,6 +31,7 @@ const DailyReportsChart = ({ dailyStatics }) => {
   return (
     <div className='p-4  bg-gray-200 m-4 rounded shadow-lg shadow-gray-500/40'>
       <h2 className='text-lg font-semibold text-gray-800 text-center'>Daily Statics</h2>
+      <hr className="border-1  border-gray-300 m-2"/>
       <Bar data={data}  options={{
           plugins: {
             legend: {

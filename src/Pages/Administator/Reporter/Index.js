@@ -25,7 +25,7 @@ const ReporterDashboard = () => {
 
   return (
     <div className="flex">
-      <div className="bg-red-800 lg:w-1/6 h-screen shadow-lg shadow-gray-500/40  ">
+      <div className="bg-red-800 lg:w-1/6 h-screen shadow-lg shadow-gray-500/40 sticky z-50 top-0 ">
         <img
           src={logo}
           alt="logo"
@@ -42,8 +42,9 @@ const ReporterDashboard = () => {
       </div>
       <div className="flex-1 overflow-auto ">
 
-        <div className="h-48 shadow-md shadow-white-500/40 ">
+        <div className=" shadow-md h-48 shadow-white-500/40 bg-red-800 text-white">
           <div className="p-4">
+            <h1>Reporter Dashbpard</h1>
           <h1 className="text-2xl font-semibold ">
             {geetMessage} <span className="uppercase"> {name.firstName} {name?.lastName}</span>
           </h1>

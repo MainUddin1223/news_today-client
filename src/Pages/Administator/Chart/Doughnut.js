@@ -11,7 +11,6 @@ ChartJS.register(
   Legend
 )
 const DoughnutChart = ({ totalStatics }) => {
-  console.log(totalStatics)
   const {totalReports=0,approved=0,pending=0,rejected=0}=totalStatics
   const data = {
     labels:['Total','Approved','pending','Rejected'],
@@ -33,6 +32,7 @@ const DoughnutChart = ({ totalStatics }) => {
   return (
     <div className=' p-4 bg-gray-200 m-4 rounded shadow-lg shadow-gray-500/40'>
      <h2 className='text-lg font-semibold text-gray-800 text-center'>Total Statics</h2>
+     <hr className="border-1  border-gray-300 m-2"/>
       <Doughnut data={data} options={{
           plugins: {
           }

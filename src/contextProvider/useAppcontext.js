@@ -6,13 +6,14 @@ const AppContextProvider = (props) => {
 
   const [appLoading,setAppLoading] = useState(true)
   const [myInfo,{state:authData}] = useRequest();
-console.log(authData)
 const afterLogin = async()=>{
+  setAppLoading(true)
   const path = 'auth/login';
   await myInfo({
     path,
     method:'GET'    
   })
+  console.log('called')
   setAppLoading(false)
 }
 

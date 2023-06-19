@@ -2,9 +2,10 @@ import React from "react";
 import { Route, Routes } from "react-router";
 import "./App.css";
 import AdminDashboard from "./Pages/Administator/Admin/AdminDashboard";
-import Approval from "./Pages/Administator/Admin/Approval";
+import AdminProfile from "./Pages/Administator/Admin/AdminProfile";
+import Reporters from "./Pages/Administator/Admin/Reporters";
 import Reports from "./Pages/Administator/Admin/Reports";
-import Stuff from "./Pages/Administator/Admin/Stuff";
+import AdminStatics from "./Pages/Administator/Admin/Statics";
 import CreateReport from "./Pages/Administator/Reporter/CreateReport";
 import ReporterDashboard from "./Pages/Administator/Reporter/Index";
 import MyStatics from "./Pages/Administator/Reporter/MyStatics";
@@ -42,10 +43,12 @@ function App() {
             </ProtectedRoute>
           }
         >
-          <Route index element={<Reports />} />
+          <Route index element={<AdminStatics />} />
+          <Route path="statics" element={<AdminStatics />} />
           <Route path="reports" element={<Reports />} />
-          <Route path="stuff" element={<Stuff />} />
-          <Route path="approval" element={<Approval />} />
+          <Route path="reporters" element={<Reporters/>} />
+          <Route path="editors" element={<Reports />} />
+          <Route path="profile" element={<AdminProfile />} />
         </Route>
       </Routes>
     </div>
