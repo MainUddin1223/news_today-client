@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { useAppContext } from "../../../contextProvider/useAppcontext";
-import Logout from "../../Register/Logout";
+import Logout from "../../Auth/Logout";
 
 const ReporterDashboard = () => {
   const { authData } = useAppContext();

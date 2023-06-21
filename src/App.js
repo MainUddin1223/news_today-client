@@ -10,9 +10,9 @@ import CreateReport from "./Pages/Administator/Reporter/CreateReport";
 import ReporterDashboard from "./Pages/Administator/Reporter/Index";
 import MyStatics from "./Pages/Administator/Reporter/MyStatics";
 import MyReportsList from "./Pages/Administator/Reporter/Reports";
+import Register from "./Pages/Auth/Index";
 import Home from "./Pages/Home/Index";
 import ProtectedRoute from "./Pages/ProtectedRoute/ProtectedRoute";
-import Register from "./Pages/Register/Index";
 
 function App() {
   return (
