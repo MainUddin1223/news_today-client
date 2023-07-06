@@ -20,7 +20,7 @@ const Hero = () => {
       <div>
         <h1 className="latest-report-header">Latest reports</h1>
       <div className="news-link-section col-span-1">
-        <p className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, laborum!</p>
+        <p className="" onClick={()=>navigate(`/news/123`)}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, laborum!</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, laborum!</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, laborum!</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, laborum!</p>
@@ -40,7 +40,7 @@ const Hero = () => {
       </div>
       </div>
       <div className=" col-span-2 grid grid-cols-2">
-        <div className=" bg-white m-2">
+        <div className=" bg-white m-2 cursor-pointer" onClick={()=>navigate(`/news/123`)}>
           <img src={featureImg3} alt="" className="max-h-48 mx-auto" />
           <div className="">
           <h1 className="text-lg font-bold">

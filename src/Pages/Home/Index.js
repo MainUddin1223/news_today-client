@@ -13,7 +13,7 @@ const Home = () => {
       <HeaderAddSection banner={banner}/>
       <div className="bg-white">
         <Header />
-        <div className="mx-4">
+        <div className="m-4">
           <NavigationList />
         </div>
         <div className="">
