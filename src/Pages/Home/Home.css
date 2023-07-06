@@ -1,0 +1,43 @@
+.news-link-section{
+    overflow-y: scroll;
+    height: 60vh;
+    font-weight: 500;
+    line-height: 30px;
+    padding: 10px;
+    font-size: 25px;
+}
+.news-link-section::-webkit-scrollbar {
+    display: none;
+}
+.news-link-section p{
+    cursor: pointer;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(170, 73, 73);
+
+}
+.latest-report-header{
+    font-size: 29px;
+    border-bottom: 1px solid rgb(170, 73, 73);
+    margin-bottom:10px ;
+    margin: 0 10px;
+}
+.sport-border{
+    transition: .7s  ease-in-out;
+    width: 20%;
+}
+.sport-section:hover + .sport-border{
+    width: 75%;
+}
+@media (max-width: 992px) { 
+    .news-link-section{
+        height: 50vh;
+    }
+
+}
+@media (max-width: 676px) { 
+    .news-link-section{
+        height: 20vh;
+        margin: 20px 0;
+    }
+
+}

@@ -13,7 +13,7 @@ const Reports = () => {
   const fatchReports = async () => {
     try {
       const reports = await getAllNews({
-        path: "/admin/reports",
+        path: "admin/reports",
         method: "GET",
       });
       setReportsList(reports);
@@ -21,7 +21,6 @@ const Reports = () => {
       console.log(error);
     }
   };
-  console.log(reportsList);
   return (
     <div className="container mx-auto relative">
       <h1 className="text-2xl text-center font-medium my-4">News Reports</h1>
@@ -64,31 +63,23 @@ const Reports = () => {
             </tr>
           </thead>
           <tbody>
-          { reportsList?.length? reportsList.map(news=>(
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-            <td className="px-6 py-4 font-medium text-gray-900">
-              {news.title}
-            </td>
-            <td className="px-6 py-4">
-              {news.reporterId}
-            </td>
-            <td className="px-6 py-4">
-              {news.category}
-            </td>
-            <td className="px-6 py-4">
-             {news.status}
-            </td>
-            <td className="px-6 py-4">{
-              news?.createdAt
-}</td>
-            <td className="px-6 py-4">{
-              news?.reviewerId
-}</td>
-            <td className="px-6 py-4 text-right">
-              <FiEdit className="text-xl" />
-            </td>
-          </tr>
-          )):'No reports found'}
+            {reportsList?.length
+              ? reportsList.map((news) => (
+                  <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                   <th scope="row" class="px-6 py-4 w-72 font-medium text-gray-900 dark:text-white">
+                    {news.title}
+                </th>
+                    <td className="px-6 py-4">{news.reporterId}</td>
+                    <td className="px-6 py-4">{news.category}</td>
+                    <td className="px-6 py-4">{news.status}</td>
+                    <td className="px-6 py-4">{news?.createdAt}</td>
+                    <td className="px-6 py-4">{news?.reviewerId}</td>
+                    <td className="px-6 py-4 text-right">
+                      <FiEdit className="text-xl" />
+                    </td>
+                  </tr>
+                ))
+              : "No reports found"}
           </tbody>
         </table>
       </div>

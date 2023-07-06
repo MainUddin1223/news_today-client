@@ -6,6 +6,7 @@ const AppContextProvider = (props) => {
 
   const [appLoading,setAppLoading] = useState(true)
   const [myInfo,{state:authData}] = useRequest();
+  const [isInviteModal, setIsInviteModal] = useState(false);
 const afterLogin = async()=>{
   setAppLoading(true)
   const path = 'auth/login';
@@ -28,6 +29,8 @@ useEffect(()=>{
       value={{
         appLoading,
         authData,
+        isInviteModal,
+        setIsInviteModal,
         afterLogin,
         ...values,
       }}

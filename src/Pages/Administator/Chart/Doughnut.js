@@ -30,7 +30,7 @@ const DoughnutChart = ({ totalStatics }) => {
     ]
   }
   return (
-    <div className=' p-4 bg-gray-200 m-4 rounded shadow-lg shadow-gray-500/40'>
+    <div className="p-4 bg-gray-200 m-4 md:w-3/4 lg:w-2/4 mx-auto">
      <h2 className='text-lg font-semibold text-gray-800 text-center'>Total Statics</h2>
      <hr className="border-1  border-gray-300 m-2"/>
       <Doughnut data={data} options={{

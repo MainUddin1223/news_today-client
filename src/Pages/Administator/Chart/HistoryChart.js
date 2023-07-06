@@ -36,8 +36,9 @@ const HistoryChartReport = ({ chartData }) => {
   };
 
   return (
-    <div className="p-4 bg-gray-200 m-4 mx-auto rounded shadow-lg shadow-gray-500/40">
-    <h2 className='text-lg font-semibold text-gray-800 text-center'>History</h2>
+    <div className="p-4 bg-gray-200 m-4 md:w-3/4 lg:w-2/4 mx-auto">
+      <h2 className='text-lg font-semibold text-gray-800 text-center'>History</h2>
+      <hr className="border-1  border-gray-300 m-2"/>
       <Bar
         data={data}
         options={{

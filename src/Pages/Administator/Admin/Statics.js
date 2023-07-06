@@ -22,7 +22,7 @@ const AdminStatics = ()=>{
       const handleStatics = async()=>{
      try {
         const statics = await getStatics({
-            path: "/admin/statics",
+            path: "admin/statics",
             method: "GET",
           });
           const grossStatics = statics.totalStatics;
@@ -54,7 +54,7 @@ const AdminStatics = ()=>{
         <div>
             <h1 className="text-2xl text-center font-medium my-4">Overall performance</h1>
             <hr className="border-1  border-gray-300 m-2 md:m-4 lg:m-8"/>
-        <div className="grid grid-col-1 md:grid-cols-2 ">
+        <div className=" ">
         <div className=" ">
             
             <DailyReportsChart dailyStatics={dailyStatics}/>
