@@ -24,7 +24,7 @@ const handleLogin= async(e)=>{
     const userData = result.result
    await localStorage.setItem('token',result.result.token);
 
-    await afterLogin()
+    // await afterLogin()
 
     if(userData.role == 'reporter'){
       navigate("/reporter")

@@ -3,7 +3,6 @@ import { useState } from 'react';
 const baseURL = process.env.REACT_APP_SERVER_URL
 
 export const useRequest = (path, method = 'get', rowResponse = false) => {
-  const [isLoading, setIsLoading] = useState(false);
   const [state, setState] = useState(null);
   const [error, setError] = useState('');
   const token = localStorage.getItem('token')|| ''
@@ -14,7 +13,6 @@ export const useRequest = (path, method = 'get', rowResponse = false) => {
     params,
   } = {}) => {
     setError(null);
-    setIsLoading(true);
     const requestedMethod = requestMethod || method;
     const url = `${baseURL}${requestPath || path}`;
     return new Promise(async (resolve, reject) => {
@@ -33,7 +31,6 @@ export const useRequest = (path, method = 'get', rowResponse = false) => {
         setState(res.data);
         resolve(res.data);
       } catch (error) {
-        console.log('---------------------',error)
         const { response, message } = error;
         let resError;
         if (typeof response?.data === 'object') {
@@ -45,10 +42,9 @@ export const useRequest = (path, method = 'get', rowResponse = false) => {
         }
       } finally {
         setTimeout(() => {
-          setIsLoading(false);
         }, 1000);
       }
     });
   };
-  return [runRequest, { state, isLoading, error, setError }];
+  return [runRequest, { state, error, setError }];
 };

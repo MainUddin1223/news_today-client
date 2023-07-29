@@ -1,28 +1,31 @@
 import React, { useState } from "react";
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from '../../assets/logo.png';
 import './Header.css';
 
 const Header = () => {
   const [showNav,setShowNav] = useState(false)
+  const location = useLocation()
+
+
   return (
     <div className="bg-gray-700 py-2 flex justify-around items-center sticky top-0">
       <div className="flex">
         <GiHamburgerMenu className="text-2xl text-white hamburgerMenu" onClick={()=>{setShowNav(!showNav)}}/>
       <img src={logo} alt="" className="w-12 bg-white mx-4 rounded company-logo"/>
       </div>
-      <nav className={`flex lg:space-x-4 text-md nav-list ${showNav?"show-nav":'hide-nav'}`}>
+      <nav className={`flex lg:space-x-4 text-md font-medium nav-list ${showNav?"show-nav":'hide-nav'}`}>
         {/* <Link to="/home" className="text-red-100 py-1 nav-item">
           Home
         </Link> */}
-        <Link to="/home" className="text-red-100 py-1 nav-item">
+        <Link to="/home" className={`text-red-100 py-1 nav-item ${(location.pathname ==='/'||location.pathname ==='/home')&& 'active-route'}`}>
           Home
         </Link>
-        <Link to="/politics" className="text-red-100 py-1 nav-item">
+        <Link to="/politics" className={`text-red-100 py-1 nav-item" ${location.pathname ==='/politics'&& 'active-route'}`}>
           Politics
         </Link>
-        <Link to="/home" className="text-red-100 py-1 nav-item">
+        <Link to="/home" className={`text-red-100 py-1 nav-item" `}>
           Tech
         </Link>
         <Link to="/home" className="text-red-100 py-1 nav-item">

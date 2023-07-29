@@ -14,10 +14,14 @@ const afterLogin = async()=>{
     path,
     method:'GET'    
   })
-  console.log('called')
   setAppLoading(false)
 }
-
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
 useEffect(()=>{
   const token = localStorage.getItem('token')
 
@@ -28,10 +32,12 @@ useEffect(()=>{
     <AppContext.Provider
       value={{
         appLoading,
+        setAppLoading,
         authData,
         isInviteModal,
         setIsInviteModal,
         afterLogin,
+        scrollToTop,
         ...values,
       }}
     >

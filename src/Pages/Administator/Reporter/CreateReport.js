@@ -9,7 +9,7 @@ const CreateReport = () => {
   const [handleNews] = useRequest();
   const [reportForm, setReportForm] = useState({
   });
-
+console.log('auth',authData)
   const handleCreateReport = async (e) => {
     e.preventDefault();
     const path = "reporter/report";

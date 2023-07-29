@@ -33,18 +33,18 @@ const MyStatics = () => {
         method: "GET",
       });
       console.log(history);
-      const grossStatics = statics.totalStatics;
+      const grossStatics = statics?.totalStatics;
       setTotalStatics((prev) => ({
         ...prev,
-        totalReports: grossStatics.totalCount,
+        totalReports: grossStatics?.totalCount,
         approved: grossStatics?.counts?.approved,
         pending: grossStatics?.counts?.pending,
         rejected: grossStatics?.counts?.rejected,
       }));
-      const todayStatics = statics.todayStatics;
+      const todayStatics = statics?.todayStatics;
       setDailyStatics((prev) => ({
         ...prev,
-        totalReports: todayStatics.totalCount | 0,
+        totalReports: todayStatics?.totalCount | 0,
         approved: todayStatics?.counts?.approved | 0,
         pending: todayStatics?.counts?.pending | 0,
         rejected: todayStatics?.counts?.rejected | 0,
